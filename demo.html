@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TouchCarousel Demo</title> 	
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+ 	<meta name="viewport" content="maximum-scale=1,user-scalable=yes,width=1024" >
+ 	
+ 	
+ 	
+ 	
+ 	
+	<!-- Base stylesheet -->
+	<link rel="stylesheet" href="touchcarousel/touchcarousel.css" />
+   
+	<!-- Skin stylesheets, include to your site only that what you need -->
+	<link rel="stylesheet" href="touchcarousel/minimal-light-skin/minimal-light-skin.css" />	
+	<link rel="stylesheet" href="touchcarousel/three-d-skin/three-d-skin.css" />
+	<link rel="stylesheet" href="touchcarousel/black-and-white-skin/black-and-white-skin.css" />
+	<link rel="stylesheet" href="touchcarousel/grey-blue-skin/grey-blue-skin.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>	
+	<script src="touchcarousel/jquery.touchcarousel-1.1.min.js"></script> 
+	
+	
+	
+	
+	<style>
+		body, html {
+			margin: 0;
+			padding: 0;
+		}
+		h1 , h2 {
+			width: 100%;
+			text-align: center;
+		} 
+		p.myinfo {
+			width: 700px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		h2 {
+			margin-top: 70px;
+		}
+		
+		
+		
+		
+		
+		/**
+		* Carousel with image and text (horizontal)
+		**/
+		#carousel-image-text-horizontal {
+			width: 940px;
+			height: 70px;
+			margin: 0 auto;
+		}
+		#carousel-image-text-horizontal .touchcarousel-item {
+			width: 216px;
+			height: 60px;
+			margin-right: 12px;
+			background-color: #F0F3F3;			
+			padding: 5px;
+			position: relative;
+		}
+		#carousel-image-text-horizontal img, 
+		#carousel-image-text-horizontal h4,
+		#carousel-image-text-horizontal p {
+			float:left;
+			position: relative;
+			margin: 0;
+			padding: 0;	
+			border: 0;			
+		}		
+		#carousel-image-text-horizontal img {			
+			width: 60px;
+			height: 60px;
+		}
+		#carousel-image-text-horizontal .rblock {
+			width: 138px;
+			float: left;
+			margin-left: 7px;
+		}
+		#carousel-image-text-horizontal h4 {
+			font: bold 13px/20px Helvetica, Arial, sans-serif;
+			color: #000;
+			width: 140px;
+		}
+		#carousel-image-text-horizontal p {			
+			font: normal 13px/20px Helvetica, Arial, sans-serif;
+			color: #555;
+		}
+
+
+
+
+
+
+		/**
+		* Carousel with a single image per view
+		**/
+		#carousel-single-image {
+			width: 400px;
+			height: 400px;
+			margin: 0 auto;			
+			background: #242021;
+		}
+		#carousel-single-image .touchcarousel-container {
+			height: 100%;
+			background: url(demo-images/wood-pattern.jpg) repeat;
+		}
+		#carousel-single-image .touchcarousel-item {
+			margin-right: 0;
+			width: 400px;
+			height: 400px;
+		}
+		#carousel-single-image img {
+			width: 300px;
+			height: 300px;
+			margin: 47px 0 0 47px;	
+			
+			float:left;
+			position: relative;
+			display: block;
+			padding: 3px;
+			background: #FFF;
+			border: 0;
+			
+			-webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.6);
+			-moz-box-shadow: 0 1px 6px rgba(0,0,0,0.6);
+			box-shadow: 0 1px 6px rgba(0,0,0,0.6);
+		}
+		#carousel-single-image .tc-paging-container {
+			margin-top: -29px;
+		}
+
+
+
+
+
+		/**
+		* Carousel with image and text, custom skinned scrollbar
+		**/
+		#carousel-image-and-text {
+			width: 940px;
+			height: 279px;
+			margin: 0 auto;	
+		}	
+		#carousel-image-and-text .arrow-holder {
+			height: 250px;
+		}		
+		#carousel-image-and-text .touchcarousel-item {
+			margin-right: 1px;	
+			width: 170px;
+			height: 277px;		
+		}
+		#carousel-image-and-text .item-block {
+			width: 170px;
+			height: 277px;
+			display: block;
+		}
+		#carousel-image-and-text .item-block img,
+		#carousel-image-and-text .item-block h4, 
+		#carousel-image-and-text .item-block p {
+			float: left;
+			position: relative;
+			display: block;
+			margin: 0;			
+		}
+		#carousel-image-and-text .item-block img {
+			width: 170px;
+			height: 230px;		
+			border: 0;
+			padding: 0;		
+		}
+		#carousel-image-and-text .item-block {			
+			text-decoration: none;
+			color: inherit;			
+		}					
+		#carousel-image-and-text .item-block h4 {
+			font: bold 13px/20px Helvetica, Arial, sans-serif;
+			color: #000;
+			width: 158px;
+			height: auto;		
+			padding: 2px 0 0 6px;
+			-webkit-transition: color 0.2s ease-out; 
+			-moz-transition: color 0.2s ease-out;
+			transition: color 0.2s ease-out;  	
+		}
+		#carousel-image-and-text .item-block:hover h4 {	
+			color: #1873c9;		
+		}
+		#carousel-image-and-text .item-block p {			
+			font: normal 13px/20px Helvetica, Arial, sans-serif;
+			color: #555;		
+			width: 158px;
+			padding: 0 0 0 6px;
+		}
+		#carousel-image-and-text .scrollbar-holder {
+			background: #CED7DB;
+			bottom: 0;
+			height: 1px;
+			left: 0;
+			right: 0;
+		}
+		#carousel-image-and-text .scrollbar {
+			background-color: #45a8ce !important;
+			bottom: 0;
+		}
+		
+		
+		
+		
+		/**
+		* "Free-scroll" gallery
+		**/
+		#carousel-gallery {
+			width: 100%;
+			margin: 0;
+			padding: 15px 0;
+			background: #EFEFEF;
+			overflow: hidden !important;
+		}		
+		#carousel-gallery .touchcarousel-wrapper {
+			overflow: visible;
+			margin-left: 80px;
+		}
+		#carousel-gallery .touchcarousel-item {
+			margin-right: 15px;		
+			background: #CCC;	
+			height: 400px;
+		}
+		#carousel-gallery .arrow-icon.left {
+			left: 25px;				
+		}
+		#carousel-gallery .arrow-icon.right {
+			right: 25px;			
+		}
+		#carousel-gallery .arrow-holder {
+			width: 60px;	
+		}
+		#carousel-gallery  .scrollbar-holder {
+			bottom: 6px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="main-body">		
+		<h1>TouchCarousel Demo</h1>
+		<p class="myinfo">Custom styles in this demo are applied in header of this HTML file <br/>(blue-gray scrollbar, wooden background e.t.c.).</p>
+		
+		
+		
+		<h2>#carousel-image-text-horizontal</h2>
+		<div id="carousel-image-text-horizontal" class="touchcarousel  three-d">       
+			<ul class="touchcarousel-container">
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Touch Navigation</h4>
+						<p>for iOS, Android, Blackberry</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Physics-Based Navigation</h4>
+						<p>free-scroll or paging</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Four Skins</h4>
+						<p>with orginized Photoshop files</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Responsive Layout</h4>
+						<p>Change width at any time</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Any HTML Content</h4>
+						<p>except video</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Powerful API</h4>
+						<p>Public methods, callbacks, properties</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Commented CSS and JavaScript code</h4>
+						<p></p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Skinnable Scrollbar</h4>
+						<p>Bult-in &ldquo;dark&rdquo; and &ldquo;light&rdquo; skins.</p>
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Multiple Carousels on One Page is allowed</h4>						
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Simple Documentation</h4>						
+					</div>
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/60x60/1.jpg" width="60" height="60" />
+					<div class="rblock">
+						<h4>Free support</h4>
+						<p>and lifetime updates</p>
+					</div>
+				</li>				
+			</ul>
+		</div>
+		
+		
+		
+		<h2>#carousel-single-image</h2>
+		<div id="carousel-single-image" class="touchcarousel   minimal-light">       
+			<ul class="touchcarousel-container">
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+				<li class="touchcarousel-item">
+					<img src="demo-images/300x300/1.jpg" width="300" height="300" />
+				</li>
+			</ul>
+		</div>
+		
+		
+		
+		<h2>#carousel-image-and-text</h2>
+		<div id="carousel-image-and-text" class="touchcarousel grey-blue">       
+			<ul class="touchcarousel-container">
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>				
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>				
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>				
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>
+				<li class="touchcarousel-item">
+					<a class="item-block" href="#">
+					    <img src="demo-images/170x230/1.jpg" width="170" height="230" />
+					    <h4>Lorem Ipsum</h4>    
+						<p>Dolor sit amet</p>
+					</a>
+				</li>				
+			</ul> 
+		</div>
+		
+		
+		
+		<h2>#carousel-gallery</h2>		
+		<div id="carousel-gallery" class="touchcarousel  black-and-white">       			
+    		<ul class="touchcarousel-container">
+    			<li class="touchcarousel-item">
+    				<img src="demo-images/gallery/1.jpg" width="600" height="400" />			
+    			</li>  
+    			<li class="touchcarousel-item">
+    				<img src="demo-images/gallery/2.jpg" width="400" height="400" />			
+    			</li>
+    			<li class="touchcarousel-item">
+    				<img src="demo-images/gallery/3.jpg" width="300" height="400" />			
+    			</li>
+    			<li class="touchcarousel-item">
+    				<img src="demo-images/gallery/1.jpg" width="600" height="400" />			
+    			</li>  
+    			<li class="touchcarousel-item">
+    				<img src="demo-images/gallery/2.jpg" width="400" height="400" />			
+    			</li>
+    			<li class="touchcarousel-item">
+    				<img src="demo-images/gallery/3.jpg" width="300" height="400" />			
+    			</li>			
+    		</ul>
+    	</div>
+    	
+    	
+    	
+    	<br/><br/><br/><br/>
+    	<p class="myinfo">Follow me on <a href="http://twitter.com/dimsemenov">Twitter</a> to get notified about latest TouchCarousel updates.</p>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	</div>
+           
+	<script type="text/javascript">
+		jQuery(function($) {
+			$("#carousel-image-text-horizontal").touchCarousel({			
+				itemsPerMove: 4,
+				pagingNav: true,
+				scrollbar: false,				
+				scrollToLast: true,
+				loopItems: true				
+			});
+			
+			
+			
+			$("#carousel-single-image").touchCarousel({
+				pagingNav: true,
+				scrollbar: false,
+				directionNavAutoHide: false,				
+				itemsPerMove: 1,				
+				loopItems: true,				
+				directionNav: false,
+				autoplay: false,
+				autoplayDelay: 2000,
+				useWebkit3d: true,
+				transitionSpeed: 400
+			});
+			
+			$("#carousel-image-and-text").touchCarousel({					
+				pagingNav: false,
+				snapToItems: false,
+				itemsPerMove: 4,				
+				scrollToLast: false,
+				loopItems: false,
+				scrollbar: true
+		    });
+			
+			$("#carousel-gallery").touchCarousel({				
+				itemsPerPage: 1,				
+				scrollbar: true,
+				scrollbarAutoHide: true,
+				scrollbarTheme: "dark",				
+				pagingNav: false,
+				snapToItems: false,
+				scrollToLast: true,
+				useWebkit3d: true,				
+				loopItems: false
+			});			
+		});
+    </script>
+
+</body>
+</html>

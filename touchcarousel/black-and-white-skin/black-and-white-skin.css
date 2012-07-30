@@ -1,0 +1,109 @@
+/******************************************************\
+*
+*  Minimal Light Skin
+*
+*    1. Arrows(direction) navigation
+*    2. Paging navigation
+*
+\******************************************************/
+
+
+
+/******************************************************\
+*
+*  1. Arrows (direction) navigation
+*
+\******************************************************/
+.touchcarousel.black-and-white .arrow-icon {
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;	
+	
+	background-image: url('sprite.png');
+	background-repeat: no-repeat;
+	
+	background-color: rgb(50, 50, 50);	
+	background-color: rgba(0, 0, 0, 0.7);	
+	
+	-moz-border-radius: 4px; 
+  	-webkit-border-radius: 4px; 
+ 	border-radius: 4px;
+ 	
+ 	-moz-opacity: 0.8;	
+	-webkit-opacity: 0.8;	
+	opacity: 0.8;
+
+}
+.touchcarousel.black-and-white .arrow-holder {
+	width: 35px;	
+}
+.touchcarousel.black-and-white .arrow-holder:active .arrow-icon {	
+	-moz-opacity: 0.7 !important;	
+	-webkit-opacity: 0.7 !important;	
+	opacity: 0.7 !important;	
+}
+.touchcarousel.black-and-white .arrow-icon.left {
+	left: 10px;
+	background-position: -2px -6px;		
+}
+.touchcarousel.black-and-white .arrow-icon.right {
+	right: 10px;
+	background-position: -175px -6px;	
+}
+.touchcarousel.black-and-white .arrow-holder:hover .arrow-icon {
+	background-color: rgb(30, 30, 30);	
+	background-color: rgba(0, 0, 0, 0.7);	
+	
+	-moz-opacity: 1;	
+	-webkit-opacity: 1;	
+	opacity: 1;
+}
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left {
+	background-position: -39px -6px;
+}
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right {
+	background-position: -138px -6px;	
+}
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left,
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right {	
+	background-color: rgb(200, 200, 200);
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/******************************************************\
+*
+*  2. Paging navigation
+*
+\******************************************************/
+.touchcarousel.black-and-white .tc-paging-container {	
+	margin-top: -22px;
+}
+.touchcarousel.black-and-white .tc-paging-item {
+	background-image: url('sprite.png');
+	background-repeat: no-repeat;
+	background-position:  -95px -4px;
+		
+	
+	width: 16px;
+	height: 16px;		
+}
+.touchcarousel.black-and-white .tc-paging-item.current {	
+	background-position:  -95px -22px;
+}
+.touchcarousel.black-and-white .tc-paging-container {
+	margin-top: -25px;
+}
+.touchcarousel.black-and-white .tc-paging-centerer-inside {
+	-moz-border-radius: 4px; 
+  	-webkit-border-radius: 4px; 
+ 	border-radius: 4px;
+ 	
+ 	background-color: rgb(50, 50, 50);	
+	background-color: rgba(0, 0, 0, 0.6);	
+	
+	padding: 2px 4px;
+}
+
+
+
+

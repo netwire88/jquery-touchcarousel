@@ -1,0 +1,417 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]--><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <title>TouchCarousel Documentation v1.1</title>
+    <link rel="stylesheet" href="assets/highlight/github.css">
+	<script src="assets/highlight/highlight.pack.js"></script>
+    <script>
+		hljs.tabReplace = '    ';
+		hljs.initHighlightingOnLoad();
+    </script>
+
+    <style>
+		body {
+		  color: #000;
+		  font: normal normal 400 1em/1.5em  Helvetica, Arial, sans-serif;
+		  margin:0;
+		  padding:0;
+		  
+		}
+		p,
+		ul#nav {
+			margin: 0;
+			padding: 0;
+		}
+		#nav li.sub {
+			margin-left:20px;
+			padding: 0;
+			list-style-type:none;
+		}
+		
+		p {
+			margin-bottom: 20px;
+		}
+		#logo {
+			margin-top:8px;
+			margin-bottom:5px;
+			font: normal normal 400 1.55em/0.5em  Georgia, sans-serif;
+			text-align:center;
+		}
+		#logo .ver {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size:0.5em;
+			line-height:2.2em;
+			margin-top:4px;
+			display:block;
+			
+		}
+		#leftBar {
+			width:210px;
+			left: 20px;
+			position: fixed;
+			top: 20px;
+		}
+		#navHolder {
+			padding:10px 20px;
+			background:#F5F5F5;			
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.30);
+			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.30);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.30);			
+		}
+		#socialHolder {
+			padding:10px 20px;
+		}
+		#socialHolder a {			
+			color: #06A;
+			text-decoration:underline;		
+		}
+		#nav {		
+			list-style: none;
+		}
+		
+		#nav a {
+			
+			color: #06A;
+			text-decoration:underline;
+			margin-bottom:8px;
+			display:block;
+		}
+		#nav a:hover , #socialHolder a:hover {
+			color:#C00;
+		}
+		#nav .current a {
+			color:#000;
+			border: 0px;
+			text-decoration:none;
+		}
+		#container {
+			margin: 0 0 25px 250px;
+			width: 600px;
+		}
+		.section {
+			position:relative;
+			/*padding: 20px;*/
+		}
+		.section p:last-child {
+			margin-bottom: 0;
+		}
+		h2 {
+			font-size: 1.25em;
+			line-height: 1.333;
+			font-weight: bold;
+			
+			margin-top: 22px;
+			padding-top: 10px;
+			margin-bottom: 10px;
+		}
+		h3 {
+			font-size: 1em;
+			line-height: 1.333;
+			font-weight: normal;
+			
+			margin: 18px 0 6px;
+		}
+		p {
+			margin-bottom: 9px;	
+		}
+		
+		#nav li, p {
+			font-size: 13px;
+			line-height: 1.4em;
+		}
+		.faq-question {
+			font-weight:bold;
+			margin-bottom:5px;			
+			margin-top:20px;
+		}
+		.faq-answer {
+			
+		}
+		
+		
+		pre {
+			width:805px;
+			background:#F5F5E1;
+			margin:0 0 20px;
+			padding:5px 7px;
+		}
+		pre .comment {
+			color: #3E3E2E;
+		}
+		code {
+			font-family: 'Courier New',monospace;
+			font-size:12px;
+			line-height:1.4;
+			background:	#F5F5E1;
+		}
+		pre code {
+			background :none;
+		}
+		p code {
+			padding:0 4px;
+		}
+		.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+		.clearfix:after { clear: both; }
+		.clearfix { zoom: 1; }
+		
+		.section ul {
+			
+			margin:0 0 9px -15px;	
+			
+		}
+		.footerThanks {
+			padding-top:20px;
+			text-align:center;
+			border-top:1px solid #333;
+			margin-top:40px;
+		}
+		
+		
+		
+
+    </style>
+    <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+ 
+</head>
+
+<body>        
+       
+    <div id="leftBar">
+    	<div id="navHolder">
+	        <h1 id="logo">Touch&thinsp;Carousel<br/><span class="ver">Documentation, v1.0</span></h1> 
+	        <ul id="nav">
+	          <li><a href="#basic-usage">Basic Usage</a></li>	          
+	          <li><a href="#css-ui-styling">Skins & CSS styling</a></li>
+	          <li><a href="#javascript-options">Javascript Options</a></li> 
+	          <li><a href="#public-methods-and-properties">Public Methods, Properties</a></li>
+	          <li><a href="#tips-tricks">Tips & Tricks</a></li>	          
+	          <li><a href="#changelog">Changelog</a></li>	          
+	        </ul>
+    	</div>
+    	<div id="socialHolder">
+    		<p>Follow me on <a href="http://twitter.com/dimsemenov">Twitter</a> or <a href="http://goo.gl/2e0pU">CodeCanyon</a> to get notified about carousel updates.</p>
+    	</div>
+    </div>     
+    
+    
+
+<div id="container">
+	
+	<div class="section clearfix" id="basic-usage">
+		<p style='margin-top:35px;'>Thanks for purchasing TouchCarousel. If you have any questions that are beyond the scope of this help file, you've found a bug or want to suggest feature, so please feel free to email me via <a href="http://goo.gl/e3vgi">contact form</a> on my profile.</p>
+  		<h2>Basic Usage</h2>        
+        <p>All carousel files are in touchcarousel folder. First of you need to insert CSS and JavaScript files - base css file, skin css file, jQuery script and TouchCarousel script:</p>
+        <pre><code>&lt;!-- CSS files --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;touchcarousel/touchcarousel.css&quot; /&gt;
+&lt;!-- Skin Stylesheet --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;touchcarousel/black-and-white-skin/black-and-white-skin.css&quot; /&gt;
+
+&lt;!-- JS files --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;touchcarousel/jquery.touchcarousel-1.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+		<p>Then add following HTML code in the body section ("black-and-white" CSS class means that slider is with black-and-white skin):</p>
+		<pre><code>&lt;div id=&quot;yourCarouselId&quot; class=&quot;touchcarousel black-and-white&quot;&gt;     
+    &lt;ul class=&quot;touchcarousel-container&quot;&gt;
+        &lt;!-- TouchCarousel items, place any HTML content inside them (img tag is inserted as an example) --&gt;
+        &lt;li class=&quot;touchcarousel-item&quot;&gt;
+            &lt;img src=&quot;img/test-image1.jpg&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;touchcarousel-item&quot;&gt;
+            &lt;img src=&quot;img/test-image2.jpg&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;touchcarousel-item&quot;&gt;
+            &lt;img src=&quot;img/test-image3.jpg&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;touchcarousel-item&quot;&gt;
+            &lt;img src=&quot;img/test-image4.jpg&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;touchcarousel-item&quot;&gt;
+            &lt;img src=&quot;img/test-image5.jpg&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        <p>And finally initialize carousel:</p>
+        <pre><code>&lt;script&gt;
+jQuery(function($) {
+    $("#yourCarouselId").touchCarousel({
+        /* carousel options go here see Javascript Options section for more info */			
+    });
+});
+&lt;/script&gt;</code></pre>
+		<p>Take a look in "demo.html" file for better understanding of carousel structure.</p>
+	</div>
+	
+    <div class="section clearfix" id="css-ui-styling">
+    	<h2>Skins & CSS styling</h2>
+        <p>Set custom width and height of carousel (width can be fluid):</p>        
+        <pre><code>&lt;style&gt;	
+    #yourCarouselId {
+		width: 100%;			
+		height: 400px;
+	}
+&lt;/style&gt;</code></pre>
+		<p>TouchCarousel plugin has four pre-build skins. To add skin just add its css class to main "touchcarousel" tag and include skin css file. Skin files can be found in "touchcarousel" folder. Each skin includes CSS, PNG and PSD file.</p>
+        <pre><code>&lt;!-- Black and white skin — white controls on black background. CSS class - &quot;black-and-white&quot;. --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;touchcarousel/black-and-white-skin/black-and-white-skin.css&quot; /&gt;
+
+&lt;!-- Three-D skin — 3d-styled skin, with controls position on top left. CSS class - &quot;three-d&quot;. --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;touchcarousel/three-d-skin/three-d-skin.css&quot; /&gt;
+
+&lt;!-- Minimal light skin — simple skin with white controls. CSS class - &quot;minimal-light&quot;. --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;touchcarousel/minimal-light-skin/minimal-light-skin.css&quot; /&gt;
+
+&lt;!-- Grey-blue skin. CSS class - &quot;grey-blue&quot;. --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;touchcarousel/grey-blue-skin/grey-blue-skin.css&quot; /&gt;</code></pre>
+        <p>You can edit these skins or create your own.</p>
+    </div>
+    <div class="section clearfix" id="javascript-options">
+    	<h2>Javascript Options</h2>
+        <p>Default options and their explanations:</p>
+        <pre><code class="javascript">&lt;script&gt;	
+$("#yourCarouselId").touchCarousel({
+    itemsPerMove: 1,              // The number of items to move per arrow click.
+	
+	snapToItems: false,           // Snap to items, based on itemsPerMove.
+	pagingNav: false,             // Enable paging nav. Overrides snapToItems.
+                                  // Snap to first item of every group, based on itemsPerMove. 
+                                  
+	pagingNavControls: true,      // Paging controls (bullets).
+	
+	
+	
+	autoplay:false,               // Autoplay enabled.
+	autoplayDelay:3000,	          // Delay between transitions.
+	autoplayStopAtAction:true,    // Stop autoplay forever when user clicks arrow or does any other action.
+	
+	scrollbar: true,              // Scrollbar enabled.
+	scrollbarAutoHide: false,     // Scrollbar autohide.
+	scrollbarTheme: &quot;dark&quot;,       // Scrollbar color. Can be &quot;light&quot; or &quot;dark&quot;.	
+	
+	transitionSpeed: 600,         // Carousel transition speed (next/prev arrows, slideshow).		
+	
+	directionNav:true,            // Direction (arrow) navigation (true or false).
+	directionNavAutoHide:false,   // Direction (arrow) navigation auto hide on hover. 
+                                  // On touch devices arrows are always displayed.
+	
+	loopItems: false,             // Loop items (don&#39;t disable arrows on last slide and allow autoplay to loop).
+	
+	keyboardNav: false,           // Keyboard arrows navigation.
+	dragUsingMouse:true,          // Enable drag using mouse.	
+	
+	
+	scrollToLast: false,          // Last item ends at start of carousel wrapper.	
+	
+	
+	itemFallbackWidth: 500,       // Default width of the item in pixels. (used if impossible to get item width).
+	
+	baseMouseFriction: 0.0012,    // Container friction on desktop (higher friction - slower speed).
+	baseTouchFriction: 0.0008,    // Container friction on mobile.
+	lockAxis: true,               // Allow dragging only on one direction.
+	useWebkit3d: false,           // Enable WebKit 3d transform on desktop devices. 
+	                              // (on touch devices this option is turned on).
+								  // Use it if you have only images, 3d transform makes text blurry.
+	                                       
+	
+	onAnimStart: null,            // Callback, triggers before deceleration or transition animation.
+	onAnimComplete: null,         // Callback, triggers after deceleration or transition animation.
+	
+	onDragStart:null,             // Callback, triggers on drag start.
+	onDragRelease: null           // Callback, triggers on drag complete.
+});	
+			  
+&lt;/script&gt;</code></pre>
+    </div>
+    
+    <div class="section clearfix" id="public-methods-and-properties">    
+        <h2>Public Methods, Properties</h2> 
+        <pre><code class="javascript">&lt;script&gt;
+        
+    // Getting instance
+    var sliderInstance = $(&quot;#yourCarouselId&quot;).touchCarousel({
+    	/* options go here */
+    }).data("touchCarousel");	
+    //or
+    var sliderInstance = $(&quot;#yourCarouselId&quot;).data("touchCarousel");
+    
+        
+	
+	// Public methods
+	sliderInstance.goTo(4);            // Go to item by it's id (to #5 in example)
+									   // Make sure that you pass integer to this function.							 
+	
+	
+	sliderInstance.next();            // Go to next item
+	sliderInstance.prev();            // Go to prev item		
+	
+	sliderInstance.resumeAutoplay();  // Play slideshow 									     						     
+	sliderInstance.stopAutoplay();    // Stop slideshow	
+	
+	sliderInstance.updateCarouselSize(); // Update slider size, use it after you manually change slider size
+	sliderInstance.destroy();          // Destroy all slider events and remove slider element
+	
+	
+	sliderInstance.animateTo(-200);   // Animate items container to X position (to -200px in this example).
+	sliderInstance.setXPos(-200);     // Set X position of items container in px (to -200px in this example).
+	
+	sliderInstance.getCurrentId();    // Returns first visible item id (int).
+	
+	
+	// Public properties			
+	sliderInstance.numItems          // Number of items
+	sliderInstance.settings           // Carousel settings
+	sliderInstance.items              // Items array 
+	// Item strucure: 
+	// { item: "item object", index: "item index", posX: "relative X position", width: "item width" }
+	
+	// Callbacks:
+	onAnimStart            		// triggers before deceleration or transition animation.
+	onAnimComplete         		// triggers after deceleration or transition animation.	
+	onDragStart             		// triggers on drag start.
+	onDragRelease           		// triggers on drag complete.
+	
+	// Using callback after slider init:
+	sliderInstance.settings.onAnimComplete = function() {
+	    // "this" is slider instance
+	    console.log('Animation complete', this);  
+	};
+    
+&lt;/script&gt;</code></pre>
+    </div>
+   
+   <div class="section clearfix" id="tips-tricks">
+    	<h2>Tips & Tricks</h2>    	        
+        <ul>
+        	<li><p>You may add "non-draggable" CSS class to elements if you want to prevent dragging over it and allow default browser action. Always add it to input fields.</p></li>     
+        	<li><p>Apply margin-right to items to add spacing between them. Margin-right on last slide will be automaticaly removed.</p></li>     
+        	<li><p>To reduce HTTP requests, merge base CSS file and skin CSS file by copying contents of skin CSS to the end of base CSS.</p></li>   
+        	<li><p>Use "loopItems" js property if you want autoplay to loop.</p></li>
+        	<li><p>Use "scrollToLast" js property if you want last item of carousel to scroll to the beginning of viewport.</p></li>
+        	<li><p>Apply background to ".touchcarousel-wrapper" if you want it to stay while dragging, otherwise apply it to ".touchcarousel-container".</p></li>
+        </ul>        
+	</div>
+    <div class="section clearfix" id="changelog">
+    	<h2>Changelog</h2>    
+    	<h3>Version 1.1</h3>
+        <ul>
+        	<li><p>Fixed Date.now() ie8 bug (only js file changed).</p></li>          
+        </ul>	
+    	<h3>Version 1.0.1</h3>
+        <ul>
+        	<li><p>Fixed small mistakes in documentation (source files haven't changed).</p></li>          
+        </ul>
+        <h3>Version 1.0</h3>
+        <ul>
+        	<li><p>TouchCarousel released.</p></li>          
+        </ul>
+        <p class='footerThanks'>TouchCarousel is designed and developed by <a href="http://twitter.com/dimsemenov">Dmitry Semenov</a>. Inspired by iOS scroller.</p>              
+	</div>
+</div>
+</body>
+</html>
